@@ -19,25 +19,25 @@ if($_POST["id"]){
             $response = MercadoPago\Invoice.find_by_id($_POST["id"]);        
             break;        
     }
-   // http_response_code(200);
-    //return;
-}//else{
- //   http_response_code(400);
-  //  return;
-//}
-echo json_encode($_POST['type']); */
+    http_response_code(200);
+    return;
+}else{
+   http_response_code(400);
+    return;
+} */
+/*echo json_encode($_POST['type']); */
 
 /* 
 error_log("===========  POST  ============== ".print_r($_POST, true));
 error_log("===========  REQUEST  ============== ".print_r($_REQUEST, true));
 $entityBody = file_get_contents('php://input');
 error_log("===========  TODO  ============== ".print_r($entityBody, true));
-
- $archivo = fopen('info.log','a'); 
- fwrite($archivo,$_REQUEST); 
- fclose($archivo);  */
-
- var_dump($_POST);
+*/
+  $archivo = fopen('info.log','a'); 
+ fwrite($archivo,json_encode($_POST,JSON_PRETTY_PRINT)); 
+ fclose($archivo);  
+ 
+ //var_dump($_POST);
 
 ?>
 
