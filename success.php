@@ -102,7 +102,7 @@
                                             <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
                                                 <div class="as-tilegallery-element as-image-selected">
                                                     <div class=""></div>
-                                                    dsfsdf
+                                                    
                                                 </div>
                                                 
                                             </div>
@@ -126,8 +126,9 @@
                                         <div class="alert alert-success" role="alert">
                                             El pago ha sido realizado con exito!
                                         </div>
-                                        
-                                       
+                                            <?php echo $_GET['collection_id']; ?>
+                                            <?php echo $_GET['external_reference']; ?>
+                                            <?php echo $_GET['payment_type']; ?>                                                                                   
                                         </h3>
                                        
                                     </div>                                    
