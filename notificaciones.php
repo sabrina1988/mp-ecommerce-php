@@ -25,6 +25,6 @@ if($_POST["id"]){
  //   http_response_code(400);
   //  return;
 //}
-echo json_encode($_POST);
+echo json_encode($_POST['id']);
 
 ?>
