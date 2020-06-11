@@ -126,8 +126,8 @@
                                         <div class="alert alert-success" role="alert">
                                             El pago ha sido realizado con exito!
                                         </div>
-                                            <?php echo $_GET['collection_id']; ?>
-                                            <?php echo $_GET['external_reference']; ?>
+                                            <?php echo $_GET['collection_id']; ?><br>
+                                            <?php echo $_GET['external_reference']; ?><br>
                                             <?php echo $_GET['payment_type']; ?>                                                                                   
                                         </h3>
                                        
