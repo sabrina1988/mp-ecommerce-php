@@ -35,7 +35,11 @@ error_log("===========  TODO  ============== ".print_r($entityBody, true));
 */
   $archivo = fopen('info.log','a'); 
  fwrite($archivo,json_encode($_POST,JSON_PRETTY_PRINT)); 
+ fwrite($archivo,"\n");
+ fwrite($archivo,json_encode($_REQUEST,JSON_PRETTY_PRINT)); 
+ fwrite($archivo,"\n");
  fwrite($archivo,json_encode(["hola mundo"],JSON_PRETTY_PRINT)); 
+ fwrite($archivo,"\n");
  fclose($archivo);  
  
  //var_dump($_POST);
