@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">
 
     <link rel="stylesheet" href="./assets/fonts" media="">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
         .as-filter-button-text {
             font-size: 26px;
@@ -87,8 +89,8 @@
                             </div>
                         </div>
                         <div class="as-accessories-results  as-search-desktop">
-                            <div class="width:100%">
-                                <div class="as-producttile-tilehero with-paddlenav">
+                            <div class="width:60%">
+                                <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
                                     <div class="as-dummy-container as-dummy-img">
 
                                         <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
@@ -96,12 +98,39 @@
                                     <div class="images mini-gallery gal5 ">
                                     
 
-                                        
+                                        <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
+                                            <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
+                                                <div class="as-tilegallery-element as-image-selected">
+                                                    <div class=""></div>
+                                                    dsfsdf
+                                                </div>
+                                                
+                                            </div>
+
+                                            
+                                        </div>
 
                                         
 
                                     </div>
 
+                                </div>
+                                
+                                <div class="as-producttile-info" style="float:left;min-height: 168px;">
+                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+                                        <div class="as-producttile-title">
+                                            
+                                        </div>
+                                        <h3>
+                                       
+                                        <div class="alert alert-warning" role="alert">
+                                            El pago esta en proceso!
+                                        </div>
+                                       
+                                        </h3>
+                                       
+                                    </div>                                    
+                                        
                                 </div>
                                 
                             </div>
@@ -110,7 +139,6 @@
                 </div>
             </div>
         </div>
-
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
         <div class="as-footnotes">
             <div class="as-footnotes-content">
