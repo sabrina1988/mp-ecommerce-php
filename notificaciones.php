@@ -34,8 +34,8 @@ $entityBody = file_get_contents('php://input');
 error_log("===========  TODO  ============== ".print_r($entityBody, true));
 
  $archivo = fopen('info.log','a'); 
- fwrite($archivo,"[".date("r")."] DATA:  $_POST\r\n"); 
- fclose($ddf); 
+ fwrite($archivo,$_POST); 
+ fclose($archivo); 
 
 ?>
 
