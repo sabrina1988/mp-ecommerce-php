@@ -9,42 +9,37 @@
     MercadoPago\SDK::setAccessToken($access_token);
 
     // Crea un objeto de preferencia
-    $preference = new MercadoPago\Preference();
+    $preference = new MercadoPago\Preference();   
+
+    //crea los datos del pagador
+    $payer = new MercadoPago\Payer();
+    $payer->name  = "Lalo";        
+    $payer->surname = "Landa";
+    $payer->email = "test_user_63274575@testuser.com";                    
+    $payer->identification = array(
+        "type" => "DNI",
+        "number" => "32454432"
+    );
+    $payer->phone = array(
+        "area_code" => "011",
+        "number" => "2222-3333"
+    );    
+    $payer->address = array(
+        "street_name" => "False",
+        "street_number" => 123,
+        "zip_code" => "1111"
+    );
+    $preference->payer = $payer;
 
     // Crea un ítem en la preferencia
     $item = new MercadoPago\Item();
     $item->id          = "1234";
     $item->title       = $_POST['title'];
     $item->description = "Dispositivo móvil de Tienda e-commerce";
-    $item->picture_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
+    $item->picture_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com".$_POST['img'];
     $item->quantity    = $_POST['price'];
-    $item->unit_price  = $_POST['unit'];
-                    
+    $item->unit_price  = $_POST['unit'];                    
     $preference->items = array($item);
-
-    //crea los datos del pagador
-    $payer = new MercadoPago\Payer();
-    $payer->name  = "Lalo";        
-    $payer->surname = "Landa";
-    $payer->email = "test_user_63274575@testuser.com";        
-            
-    $payer->identification = array(
-        "type" => "DNI",
-        "number" => "32454432"
-    );
-
-    $payer->phone = array(
-        "area_code" => "011",
-        "number" => "2222-3333"
-    );
-    
-    $payer->address = array(
-        "street_name" => "False",
-        "street_number" => 123,
-        "zip_code" => "1111"
-    );
-
-    $preference->payer = $payer;
     
     //URL de retorno
     $preference->back_urls = array(
@@ -212,7 +207,8 @@
                                             <label> Dispositivo móvil de Tienda e-commerce </label>                                          
                                         </h3>
                                     </div>             
-                                        <a class="mercadopago-button"  href="<?php echo $preference->init_point; ?>">Pagar</a>                                                           
+                                    <?php echo $preference->init_point; ?>
+                                        <!--a class="mercadopago-button"  href="">Pagar</a-->                                                           
                                 </div>
                                 
                             </div>
