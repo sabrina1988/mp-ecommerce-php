@@ -19,9 +19,11 @@ if($_POST["type"]){
     
         
     }
-    var_dump(http_response_code(201));
+    http_response_code(200);
+    return;
 }else{
-    var_dump(http_response_code(400));
+    http_response_code(400);
+    return;
 }
 
 
