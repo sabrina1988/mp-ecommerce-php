@@ -25,8 +25,8 @@ if($_REQUEST["id"]){
     fwrite($archivo,"\n");
     fwrite($archivo,json_encode($_REQUEST,JSON_PRETTY_PRINT)); 
     fwrite($archivo,"\n");
-    fwrite($archivo,$response); 
-    fwrite($archivo,"\n");
+    //fwrite($archivo,$response); 
+    //fwrite($archivo,"\n");
     fclose($archivo);  
     http_response_code(200);
     return;
