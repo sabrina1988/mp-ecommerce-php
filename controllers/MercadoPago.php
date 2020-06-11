@@ -31,7 +31,7 @@ class MercadoPago
 
         // Crea un ítem en la preferencia
         $item = new MercadoPago\Item();
-        $item->id          = 1234;
+        $item->id          = "1234";
         $item->title       = $this->title;
         $item->description = "Dispositivo móvil de Tienda e-commerce";
         $item->picture_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com".$this->img;
@@ -72,11 +72,6 @@ class MercadoPago
         
         $preference->auto_return = "approved";
 
-        $preference->notification_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com/notificaciones.php";
-            
-        //numero de orden
-        $preference->external_reference = "sabrina.cuevas@webexport.com.ar";        
-
         //Metodos de pago
         $preference->payment_methods = array(
             "excluded_payment_methods" => array(
@@ -90,6 +85,10 @@ class MercadoPago
         
         MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
+        $preference->notification_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com/notificaciones.php";
+            
+        //numero de orden
+        $preference->external_reference = "sabrina.cuevas@webexport.com.ar";        
         $preference->save();
         echo "<pre>";
         print_r($preference);
