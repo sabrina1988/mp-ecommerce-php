@@ -24,7 +24,7 @@ if($_POST["type"]){
     http_response_code(200);
     return;
 }else{
-    http_response_code(400);
+    http_response_code(200);
     return;
 }
 
