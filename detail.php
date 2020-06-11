@@ -1,3 +1,82 @@
+<?php
+
+    // SDK de Mercado Pago
+    require __DIR__ .  '/vendor/autoload.php';
+                    
+    $access_token   =   "APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398";
+
+    // Agrega credenciales
+    MercadoPago\SDK::setAccessToken($access_token);
+
+    // Crea un objeto de preferencia
+    $preference = new MercadoPago\Preference();
+
+    // Crea un ítem en la preferencia
+    $item = new MercadoPago\Item();
+    $item->id          = "1234";
+    $item->title       = $_POST['title'];
+    $item->description = "Dispositivo móvil de Tienda e-commerce";
+    $item->picture_url = $_POST['img'];
+    $item->quantity    = $_POST['price'];
+    $item->unit_price  = $_POST['unit'];
+                    
+    $preference->items = array($item);
+
+    //crea los datos del pagador
+    $payer = new MercadoPago\Payer();
+    $payer->name  = "Lalo";        
+    $payer->surname = "Landa";
+    $payer->email = "test_user_63274575@testuser.com";        
+            
+    $payer->identification = array(
+        "type" => "DNI",
+        "number" => "32454432"
+    );
+
+    $payer->phone = array(
+        "area_code" => "011",
+        "number" => "2222-3333"
+    );
+    
+    $payer->address = array(
+        "street_name" => "False",
+        "street_number" => 123,
+        "zip_code" => "1111"
+    );
+
+    $preference->payer = $payer;
+    
+    //URL de retorno
+    $preference->back_urls = array(
+        "success" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/success.php",
+        "failure" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/failure.php",
+        "pending" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/pending.php"
+    );
+    
+    $preference->auto_return = "approved";
+
+    //Metodos de pago
+    $preference->payment_methods = array(
+        "excluded_payment_methods" => array(
+            array("id" => "amex")
+        ),
+        "excluded_payment_types" => array(
+            array("id" => "atm")
+        ),
+        "installments" => 6
+    );
+    
+    MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+
+    $preference->notification_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com/notificaciones.php";
+        
+    //numero de orden
+    $preference->external_reference = "sabrina.cuevas@webexport.com.ar";        
+    $preference->save();
+        //echo "<pre>";
+        //print_r($preference);        
+    
+?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -113,7 +192,7 @@
                                     </div>
 
                                 </div>
-                                <form action="controllers/MercadoPago.php" method="POST">
+                                
                                 <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                     <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
                                         <div class="as-producttile-title">
@@ -130,16 +209,12 @@
                                         <h3 >
                                             <?php echo $_POST['unit'] ?>
                                             <br>
-                                            <label> Dispositivo móvil de Tienda e-commerce </label>
-                                            <input type="hidden" name="title"  value="<?php echo $_POST['title'] ?>">
-                                            <input type="hidden" name="img"  value="<?php echo $_POST['img'] ?>">
-                                            <input type="hidden" name="unit"  value="<?php echo $_POST['unit'] ?>">
-                                            <input type="hidden" name="price" value="<?php echo $_POST['price'] ?>">                                            
+                                            <label> Dispositivo móvil de Tienda e-commerce </label>                                          
                                         </h3>
-                                    </div>                                    
-                                        <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    </div>             
+                                        <a class="mercadopago-button"  href="<?php echo $preference->init_point; ?>">Pagar</a>                                                           
                                 </div>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
