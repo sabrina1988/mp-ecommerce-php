@@ -27,7 +27,7 @@ if($_POST["id"]){
 //}
 echo json_encode($_POST['type']); */
 
-
+/* 
 error_log("===========  POST  ============== ".print_r($_POST, true));
 error_log("===========  REQUEST  ============== ".print_r($_REQUEST, true));
 $entityBody = file_get_contents('php://input');
@@ -35,7 +35,9 @@ error_log("===========  TODO  ============== ".print_r($entityBody, true));
 
  $archivo = fopen('info.log','a'); 
  fwrite($archivo,$_REQUEST); 
- fclose($archivo); 
+ fclose($archivo);  */
+
+ var_dump($_POST);
 
 ?>
 
