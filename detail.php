@@ -16,7 +16,7 @@
     $item->id          = "1234";
     $item->title       = $_POST['title'];
     $item->description = "Dispositivo móvil de Tienda e-commerce";
-    $item->picture_url = $_POST['img'];
+    $item->picture_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
     $item->quantity    = $_POST['price'];
     $item->unit_price  = $_POST['unit'];
                     
