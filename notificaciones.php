@@ -19,9 +19,9 @@ if(isset($_POST["type"])){
     
         
     }
-    return http_response_code(200);
+    http_response_code(200);
 }else{
-    return http_response_code(400);
+    http_response_code(400);
 }
 
 
