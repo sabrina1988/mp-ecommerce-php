@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ .  '/vendor/autoload.php';
+/* require __DIR__ .  '/vendor/autoload.php';
 
 MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 
@@ -25,15 +25,16 @@ if($_REQUEST["id"]){
     fwrite($archivo,"\n");
     fwrite($archivo,json_encode($_REQUEST,JSON_PRETTY_PRINT)); 
     fwrite($archivo,"\n");
-    //fwrite($archivo,$response); 
-    //fwrite($archivo,"\n");
+    fwrite($archivo,$response); 
+    fwrite($archivo,"\n");
     fclose($archivo);  
     http_response_code(200);
     return;
 }else{
    http_response_code(400);
     return;
-} 
+}  */
+
 /*echo json_encode($_POST['type']); */
 
 /* 
@@ -45,6 +46,16 @@ error_log("===========  TODO  ============== ".print_r($entityBody, true));
  
  
  //var_dump($_POST);
+
+    $archivo = fopen('info.log','a'); 
+    fwrite($archivo,json_encode($_POST,JSON_PRETTY_PRINT)); 
+    fwrite($archivo,"\n");
+    fwrite($archivo,json_encode($_REQUEST,JSON_PRETTY_PRINT)); 
+    fwrite($archivo,"\n");
+    $entityBody = file_get_contents('php://input');
+    fwrite($archivo,$entityBody); 
+    fwrite($archivo,"\n");
+    fclose($archivo);  
 
 ?>
 
