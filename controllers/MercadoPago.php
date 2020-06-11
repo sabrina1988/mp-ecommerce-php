@@ -90,10 +90,10 @@ class MercadoPago
         //numero de orden
         $preference->external_reference = "sabrina.cuevas@webexport.com.ar";        
         $preference->save();
-        echo "<pre>";
-        print_r($preference);
+        //echo "<pre>";
+        //print_r($preference);
         //redireccionamos
-        //header("Location: ".$preference->init_point);
+        header("Location: ".$preference->init_point);
 
     }
 }
