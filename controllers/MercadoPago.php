@@ -42,7 +42,8 @@ class MercadoPago
 
         //crea los datos del pagador
         $payer = new MercadoPago\Payer();
-        $payer->name  = "Lalo Landa";        
+        $payer->name  = "Lalo";        
+        $payer->surname = "Landa";
         $payer->email = "test_user_63274575@testuser.com";        
         $payer->phone = array(
             "area_code" => "11",
@@ -59,6 +60,8 @@ class MercadoPago
             "street_number" => 123,
             "zip_code" => "1111"
         );
+
+        $preference->payer = array($payer);
         
         //URL de retorno
         $preference->back_urls = array(
