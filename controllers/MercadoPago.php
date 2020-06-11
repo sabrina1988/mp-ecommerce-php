@@ -88,10 +88,10 @@ class MercadoPago
         MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
         $preference->save();
-        echo "<pre>";
-        print_r($preference);
+        //echo "<pre>";
+        //print_r($preference);
         //redireccionamos
-       // header("Location: ".$preference->init_point);
+        header("Location: ".$preference->init_point);
 
     }
 }
