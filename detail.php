@@ -3,10 +3,10 @@
     // SDK de Mercado Pago
     require __DIR__ .  '/vendor/autoload.php';
                     
-    //$access_token   =   "APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398";
+    $access_token   =   "APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398";
 
     // Agrega credenciales
-    MercadoPago\SDK::setAccessToken($_ENV['access_token']);
+    MercadoPago\SDK::setAccessToken($access_token);
 
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();   
@@ -207,8 +207,7 @@
                                             <label> Dispositivo móvil de Tienda e-commerce </label>                                          
                                         </h3>
                                     </div>             
-                                    <?php echo $preference->init_point; ?>
-                                        <!--a class="mercadopago-button"  href="">Pagar</a-->                                                           
+                                        <a class="mercadopago-button"  href="<?php echo $preference->init_point; ?>">Pagar</a>                                                           
                                 </div>
                                 
                             </div>
