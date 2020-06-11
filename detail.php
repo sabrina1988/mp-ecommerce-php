@@ -37,8 +37,8 @@
     $item->title       = $_POST['title'];
     $item->description = "Dispositivo móvil de Tienda e-commerce";
     $item->picture_url = "https://sabrina1988-mp-ecommerce-php.herokuapp.com".$_POST['img'];
-    $item->quantity    = $_POST['price'];
-    $item->unit_price  = $_POST['unit'];                    
+    $item->quantity    = $_POST['unit'];
+    $item->unit_price  = $_POST['price'];                    
     $preference->items = array($item);
     
     //URL de retorno
