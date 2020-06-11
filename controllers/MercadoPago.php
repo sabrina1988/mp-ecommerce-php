@@ -61,7 +61,7 @@ class MercadoPago
             "zip_code" => "1111"
         );
 
-        $preference->payer = array($payer);
+        $preference->payer = $payer;
         
         //URL de retorno
         $preference->back_urls = array(
