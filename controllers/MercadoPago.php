@@ -45,14 +45,15 @@ class MercadoPago
         $payer->name  = "Lalo";        
         $payer->surname = "Landa";
         $payer->email = "test_user_63274575@testuser.com";        
-        $payer->phone = array(
-            "area_code" => "11",
-            "number" => "22223333"
-        );
-        
+                
         $payer->identification = array(
             "type" => "DNI",
-            "number" => "471923173"
+            "number" => "32454432"
+        );
+
+        $payer->phone = array(
+            "area_code" => "011",
+            "number" => "2222-3333"
         );
         
         $payer->address = array(

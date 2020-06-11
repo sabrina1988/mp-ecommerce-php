@@ -1,6 +1,6 @@
 <?php
 
-require './vendor/autoload.php';
+/* require './vendor/autoload.php';
 
 MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 
@@ -25,6 +25,12 @@ if($_POST["id"]){
  //   http_response_code(400);
   //  return;
 //}
-echo json_encode($_POST['id']);
+echo json_encode($_POST['type']); */
 
+
+error_log("===========  POST  ============== ".print_r($_POST, true));
+error_log("===========  REQUEST  ============== ".print_r($_REQUEST, true));
+$entityBody = file_get_contents('php://input');
+error_log("===========  TODO  ============== ".print_r($entityBody, true));
 ?>
+
