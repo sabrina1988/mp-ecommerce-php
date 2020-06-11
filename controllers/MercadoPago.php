@@ -62,9 +62,9 @@ class MercadoPago
         
         //URL de retorno
         $preference->back_urls = array(
-            "success" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/success.php/success",
-            "failure" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/failure.php/failure",
-            "pending" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/pending.php/pending"
+            "success" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/success.php",
+            "failure" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/failure.php",
+            "pending" => "https://sabrina1988-mp-ecommerce-php.herokuapp.com/pending.php"
         );
         
         $preference->auto_return = "approved";
